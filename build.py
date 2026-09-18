@@ -16,7 +16,7 @@ import sys
 ROOT = pathlib.Path(__file__).parent
 OUT = ROOT / "portfolio-standalone.html"
 
-LINKS = """<link rel="preload" href="assets/fonts/Archivo-latin.woff2" as="font" type="font/woff2" crossorigin />
+LINKS = """<link rel="preload" href="assets/fonts/Outfit-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="assets/fonts/JetBrainsMono-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="assets/css/fonts.css" />
 <link rel="stylesheet" href="assets/css/style.css" />"""
@@ -24,8 +24,19 @@ LINKS = """<link rel="preload" href="assets/fonts/Archivo-latin.woff2" as="font"
 SCRIPT = '<script src="assets/js/main.js"></script>'
 
 
+MISSING = []
+
+
 def data_uri(match):
+    """Inline a font file, or leave the reference alone if it isn't here yet.
+
+    Ribes ships as an optional drop-in: until someone adds the file, the
+    browser simply skips that src entry and falls through to the next face
+    in the stack, exactly as it does in the unbundled version."""
     font = ROOT / "assets/fonts" / pathlib.Path(match.group(1)).name
+    if not font.exists():
+        MISSING.append(font.name)
+        return match.group(0)
     return f"url(data:font/woff2;base64,{base64.b64encode(font.read_bytes()).decode()})"
 
 
@@ -45,11 +56,14 @@ def main():
         f"<style>\n{fonts}\n{style}\n</style>",
     ).replace(SCRIPT, f"<script>\n{js}\n</script>")
 
-    if "assets/" in html:
-        sys.exit("an external reference survived the bundle — check build.py")
+    stray = [l for l in html.splitlines() if "assets/" in l and "fonts/" not in l]
+    if stray:
+        sys.exit(f"an external reference survived the bundle: {stray[0][:80]}")
 
     OUT.write_text(html)
     print(f"{OUT.name}: {len(html) // 1024} KB, 0 external requests")
+    if MISSING:
+        print("  not bundled (absent, falls back gracefully): " + ", ".join(sorted(set(MISSING))))
 
 
 if __name__ == "__main__":

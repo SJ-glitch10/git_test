@@ -6,7 +6,7 @@
 <title>SOORYA S JOSHI — Software / AI / Systems</title>
 <meta name="description" content="Portfolio of Soorya S Joshi — software development, AI/ML and electrical systems engineering. Bangalore, India." />
 <meta name="theme-color" content="#EFEBE2" />
-<link rel="preload" href="assets/fonts/Archivo-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="assets/fonts/Outfit-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="assets/fonts/JetBrainsMono-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="assets/css/fonts.css" />
 <link rel="stylesheet" href="assets/css/style.css" />
@@ -16,39 +16,35 @@
 <div class="scan" aria-hidden="true"></div>
 <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
 
-<!-- ─────────────────────────────  HEADER  ───────────────────────────── -->
-<header class="topbar" id="top">
-  <div class="topbar__id">
+<!-- ─────────────────────────────  IDE CHROME  ───────────────────────────── -->
+<div class="gutter" id="gutter" aria-hidden="true"></div>
+<div class="minimap" id="minimap" aria-hidden="true">
+  <div class="minimap__code" id="minimapCode"></div>
+  <div class="minimap__view" id="minimapView"></div>
+</div>
+
+<header class="titlebar" id="top">
+  <div class="titlebar__left">
     <span class="dot" aria-hidden="true"></span>
-    <a href="#top" class="topbar__name">S_JOSHI</a>
-    <span class="topbar__meta">// PORTFOLIO_v1.0</span>
+    <span class="crumb">
+      <span>~/portfolio</span><i aria-hidden="true">/</i><span>soorya-s-joshi</span><i aria-hidden="true">/</i><b>index.html</b>
+    </span>
   </div>
-  <nav class="topbar__nav" aria-label="Primary">
-    <a href="#about">ABOUT</a>
-    <a href="#experience">WORK</a>
-    <a href="#projects">PROJECTS</a>
-    <a href="#stack">STACK</a>
-    <a href="#research">RESEARCH</a>
-    <a href="#overview">OVERVIEW</a>
-  </nav>
-  <div class="topbar__sys">
-    <span class="sys-clock" id="clock">--:--:--</span>
-    <button class="btn-ghost" id="themeToggle" aria-pressed="false" title="Toggle theme (T)">
-      <span id="themeLabel">DARK</span>
-    </button>
-    <button class="btn-ghost menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileNav">MENU</button>
+  <div class="titlebar__right">
+    <button class="btn-ghost" id="paletteBtn" title="Command palette (Ctrl/⌘ K)">⌘K</button>
+    <button class="btn-ghost" id="themeToggle" aria-pressed="false" title="Toggle theme (T)"><span id="themeLabel">DARK</span></button>
   </div>
 </header>
 
-<nav class="mobilenav" id="mobileNav" aria-label="Mobile">
-  <a href="#about"><i>01</i> ABOUT</a>
-  <a href="#experience"><i>02</i> EXPERIENCE</a>
-  <a href="#projects"><i>03</i> PROJECTS</a>
-  <a href="#stack"><i>04</i> STACK</a>
-  <a href="#research"><i>05</i> RESEARCH</a>
-  <a href="#education"><i>06</i> EDUCATION</a>
-  <a href="#overview"><i>07</i> OVERVIEW</a>
-  <a href="#contact"><i>08</i> CONTACT</a>
+<nav class="tabs" id="tabs" aria-label="Primary">
+  <a class="tab" data-file="about.md" href="#about"><i class="tab__ico" data-ext="md">MD</i>about.md<span class="tab__x" aria-hidden="true">×</span></a>
+  <a class="tab" data-file="experience.log" href="#experience"><i class="tab__ico" data-ext="log">LOG</i>experience.log<span class="tab__x" aria-hidden="true">×</span></a>
+  <a class="tab" data-file="projects.json" href="#projects"><i class="tab__ico" data-ext="json">{}</i>projects.json<span class="tab__x" aria-hidden="true">×</span></a>
+  <a class="tab" data-file="stack.yaml" href="#stack"><i class="tab__ico" data-ext="yaml">YML</i>stack.yaml<span class="tab__x" aria-hidden="true">×</span></a>
+  <a class="tab" data-file="research.bib" href="#research"><i class="tab__ico" data-ext="bib">BIB</i>research.bib<span class="tab__x" aria-hidden="true">×</span></a>
+  <a class="tab" data-file="education.md" href="#education"><i class="tab__ico" data-ext="md">MD</i>education.md<span class="tab__x" aria-hidden="true">×</span></a>
+  <a class="tab" data-file="overview.json" href="#overview"><i class="tab__ico" data-ext="json">{}</i>overview.json<span class="tab__x" aria-hidden="true">×</span></a>
+  <a class="tab" data-file="contact.env" href="#contact"><i class="tab__ico" data-ext="env">ENV</i>contact.env<span class="tab__x" aria-hidden="true">×</span></a>
 </nav>
 
 <main>
@@ -368,6 +364,30 @@
     <a href="#top" class="foot__top">BACK TO TOP ▲</a>
   </div>
 </footer>
+
+<footer class="statusbar" aria-hidden="true">
+  <div class="statusbar__left">
+    <span class="statusbar__branch">⑂ main</span>
+    <span id="sbSection">about.md</span>
+    <span class="statusbar__ok">● 0 problems</span>
+  </div>
+  <div class="statusbar__right">
+    <span id="sbLn">Ln 1, Col 1</span>
+    <span>Spaces: 2</span>
+    <span>UTF-8</span>
+    <span>LF</span>
+    <span>HTML</span>
+    <span id="clock">--:--:--</span>
+  </div>
+</footer>
+
+<div class="palette" id="palette" role="dialog" aria-modal="true" aria-label="Command palette" hidden>
+  <div class="palette__box">
+    <div class="palette__input"><span class="prompt">&gt;</span><input id="paletteInput" type="text" placeholder="go to section, run a command…" autocomplete="off" spellcheck="false" /></div>
+    <ul class="palette__list" id="paletteList" role="listbox"></ul>
+    <div class="palette__foot"><span><kbd>↑</kbd><kbd>↓</kbd> navigate</span><span><kbd>↵</kbd> run</span><span><kbd>esc</kbd> close</span></div>
+  </div>
+</div>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script src="assets/js/main.js"></script>

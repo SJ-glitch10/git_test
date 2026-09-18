@@ -156,37 +156,74 @@
   setTheme(stored || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
   themeBtn.addEventListener('click', () => setTheme(html.dataset.theme === 'dark' ? 'light' : 'dark'));
 
-  const menuBtn = $('#menuToggle'), mobileNav = $('#mobileNav');
-  menuBtn.addEventListener('click', () => {
-    const open = mobileNav.classList.toggle('is-open');
-    menuBtn.setAttribute('aria-expanded', String(open));
-  });
-  $$('#mobileNav a').forEach(a => a.addEventListener('click', () => {
-    mobileNav.classList.remove('is-open');
-    menuBtn.setAttribute('aria-expanded', 'false');
-  }));
 
   /* ── 03 · scroll progress + active nav ─────────────────── */
 
   const bar = $('#progressBar');
-  const navLinks = $$('.topbar__nav a');
-  const sections = navLinks
-    .map(a => ({ link: a, el: $(a.getAttribute('href')) }))
+  const tabs = $$('.tab');
+  const sections = tabs
+    .map(a => ({ link: a, el: $(a.getAttribute('href')), file: a.dataset.file }))
     .filter(s => s.el);
+
+  /* line-number gutter — numbers advance with the scroll position, the way
+     they would if this page were one very long file open in an editor. */
+  const gutter = $('#gutter');
+  const LINE = 22;
+  let gutterRows = [];
+  const buildGutter = () => {
+    const rows = Math.ceil((innerHeight - 64) / LINE) + 1;
+    gutter.innerHTML = Array.from({ length: rows }, () => '<span></span>').join('');
+    gutterRows = $$('span', gutter);
+    const caret = Math.round(rows * 0.34);
+    gutterRows.forEach((r, i) => r.classList.toggle('is-caret', i === caret));
+  };
+  const paintGutter = first => gutterRows.forEach((r, i) => { r.textContent = first + i; });
+
+  /* minimap — an abstract of the document, with a viewport box that tracks scroll */
+  const minimap = $('#minimap'), mmCode = $('#minimapCode'), mmView = $('#minimapView');
+  const buildMinimap = () => {
+    let seed = 7;
+    const rnd = () => (seed = (seed * 1103515245 + 12345) % 2147483648) / 2147483648;
+    mmCode.innerHTML = sections.map(s => {
+      const lines = Math.max(6, Math.round(s.el.offsetHeight / 90));
+      return '<i class="h" style="width:70%"></i>' +
+        Array.from({ length: lines }, () => `<i style="width:${20 + rnd() * 70}%"></i>`).join('') +
+        '<hr />';
+    }).join('');
+  };
+  minimap.addEventListener('click', e => {
+    const ratio = (e.clientY - minimap.getBoundingClientRect().top) / minimap.clientHeight;
+    scrollTo({ top: ratio * (document.body.scrollHeight - innerHeight), behavior: REDUCED ? 'auto' : 'smooth' });
+  });
+
+  const sbSection = $('#sbSection'), sbLn = $('#sbLn');
 
   let ticking = false;
   const onScroll = () => {
     const max = document.body.scrollHeight - innerHeight;
-    bar.style.width = `${max > 0 ? (scrollY / max) * 100 : 0}%`;
+    const pct = max > 0 ? scrollY / max : 0;
+    bar.style.width = `${pct * 100}%`;
+
     let current = null;
-    for (const s of sections) if (s.el.getBoundingClientRect().top <= innerHeight * 0.34) current = s.link;
-    navLinks.forEach(l => l.classList.toggle('is-active', l === current));
+    for (const s of sections) if (s.el.getBoundingClientRect().top <= innerHeight * 0.34) current = s;
+    tabs.forEach(l => l.classList.toggle('is-active', current && l === current.link));
+
+    const line = Math.floor(scrollY / LINE) + 1;
+    paintGutter(line);
+    sbLn.textContent = `Ln ${line}, Col ${(Math.floor(scrollY / 7) % 60) + 1}`;
+    sbSection.textContent = current ? current.file : 'index.html';
+
+    const h = minimap.clientHeight;
+    const boxH = Math.max(28, (innerHeight / document.body.scrollHeight) * h);
+    mmView.style.height = `${boxH}px`;
+    mmView.style.top = `${pct * (h - boxH)}px`;
     ticking = false;
   };
   addEventListener('scroll', () => {
     if (!ticking) { ticking = true; requestAnimationFrame(onScroll); }
   }, { passive: true });
-  onScroll();
+  buildGutter(); buildMinimap(); onScroll();
+  addEventListener('resize', () => { buildGutter(); buildMinimap(); onScroll(); }, { passive: true });
 
   /* ── 04 · ticker ───────────────────────────────────────── */
 
@@ -351,10 +388,62 @@
     if (pending) { e.preventDefault(); say('link not wired yet'); }
   });
 
-  /* ── 10 · keyboard ─────────────────────────────────────── */
+  /* ── 10 · command palette ──────────────────────────────── */
+
+  const palette = $('#palette'), pInput = $('#paletteInput'), pList = $('#paletteList');
+
+  const COMMANDS = [
+    ...sections.map(s => ({ label: `Go to ${s.file}`, hint: 'SECTION', run: () => location.hash = s.el.id })),
+    { label: 'Toggle theme', hint: 'VIEW', run: () => themeBtn.click() },
+    { label: 'Copy email address', hint: 'CONTACT', run: () => $('.copy').click() },
+    { label: 'Next project', hint: 'PROJECTS', run: () => { location.hash = 'projects'; render((active + 1) % PROJECTS.length); } },
+    { label: 'Jump to top', hint: 'NAV', run: () => scrollTo({ top: 0, behavior: REDUCED ? 'auto' : 'smooth' }) }
+  ];
+
+  let pShown = [], pSel = 0;
+
+  const drawPalette = () => {
+    const q = pInput.value.trim().toLowerCase();
+    pShown = COMMANDS.filter(c => c.label.toLowerCase().includes(q) || c.hint.toLowerCase().includes(q));
+    pSel = Math.min(pSel, Math.max(0, pShown.length - 1));
+    pList.innerHTML = pShown.length
+      ? pShown.map((c, i) => `<li role="option" aria-selected="${i === pSel}" class="${i === pSel ? 'is-sel' : ''}" data-i="${i}">${c.label}<em>${c.hint}</em></li>`).join('')
+      : '<li><span style="opacity:.5">no matching command</span></li>';
+  };
+
+  const openPalette = () => {
+    palette.hidden = false;
+    pInput.value = ''; pSel = 0; drawPalette(); pInput.focus();
+  };
+  const closePalette = () => { palette.hidden = true; };
+  const runPalette = i => {
+    const cmd = pShown[i];
+    if (!cmd) return;
+    closePalette();
+    cmd.run();
+  };
+
+  $('#paletteBtn').addEventListener('click', openPalette);
+  pInput.addEventListener('input', () => { pSel = 0; drawPalette(); });
+  pList.addEventListener('click', e => {
+    const li = e.target.closest('li[data-i]');
+    if (li) runPalette(+li.dataset.i);
+  });
+  palette.addEventListener('click', e => { if (e.target === palette) closePalette(); });
 
   addEventListener('keydown', e => {
-    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); palette.hidden ? openPalette() : closePalette(); return; }
+    if (palette.hidden) return;
+    if (e.key === 'Escape') { closePalette(); return; }
+    if (e.key === 'ArrowDown') { e.preventDefault(); pSel = (pSel + 1) % pShown.length; drawPalette(); }
+    if (e.key === 'ArrowUp')   { e.preventDefault(); pSel = (pSel - 1 + pShown.length) % pShown.length; drawPalette(); }
+    if (e.key === 'Enter')     { e.preventDefault(); runPalette(pSel); }
+  });
+
+  /* ── 11 · keyboard shortcuts ───────────────────────────── */
+
+  addEventListener('keydown', e => {
+    if (e.metaKey || e.ctrlKey || e.altKey || !palette.hidden) return;
     const typing = /^(INPUT|TEXTAREA)$/.test(document.activeElement.tagName);
     if (typing) return;
     // arrows only page the browser while the projects section is on screen

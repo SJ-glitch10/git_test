@@ -1,8 +1,8 @@
 # SOORYA S JOSHI — Portfolio
 
-A single-page portfolio built around a terminal / engineering-drawing aesthetic:
-bone paper, ink hairlines, one signal colour, heavy condensed display type over
-monospace body text.
+A single-page portfolio that presents itself as a code editor: line-number
+gutter, file tabs, minimap, status bar and a `Ctrl/⌘ K` command palette, over a
+bone-paper / ink-hairline palette with one signal colour.
 
 No framework, no build step, no dependencies. Open `index.html` and it runs.
 
@@ -21,6 +21,19 @@ assets/fonts/*.woff2    self-hosted webfonts — no external requests at runtime
 The **OVERVIEW** band near the bottom is the whole profile compressed into one
 screen: headline metrics, a jump-table index of every section, and a
 `profile.json` dump.
+
+## IDE chrome
+
+- **Tabs** instead of a nav — each section is a file (`about.md`,
+  `projects.json`, `stack.yaml`, …) and the active one is marked
+- **Gutter** with line numbers that advance with scroll, plus a caret line
+- **Minimap** on the right, generated from the real section heights; click to jump
+- **Status bar** with branch, current file, `Ln/Col`, encoding and clock
+- **Command palette** — `Ctrl/⌘ K` to jump to a section or run an action
+- Background uses vertical indent guides rather than graph paper
+
+Gutter and minimap drop out below 1100/900px; the tab strip scrolls horizontally
+on a phone.
 
 ## Behaviour
 
@@ -42,6 +55,25 @@ the inner `<span>[LINK_PENDING]</span>`.
 - Publication link — `#research` in `index.html`
 - Per-project links — the `VIEW PROJECT` anchor in `render()` in `assets/js/main.js`
   (give each entry in `PROJECTS` a `url` and use it there)
+
+## Fonts
+
+Body and UI are JetBrains Mono. Headlines are **Ribes**, which isn't on any CDN —
+it's a free download from [fontesk.com](https://fontesk.com/ribes-font/) (check
+its licence covers your use).
+
+The face is already declared in `assets/css/fonts.css`. To install it:
+
+1. Download the archive and convert the `.otf` to `.woff2`
+   (e.g. <https://cloudconvert.com/otf-to-woff2>, or `fonttools` locally).
+2. Drop it in as `assets/fonts/Ribes.woff2` — the `.otf`/`.ttf` also work, they
+   are just heavier.
+3. Run `python3 build.py` to refresh the standalone file.
+
+No code change needed: the `@font-face` already lists those filenames, and the
+display stack is `Ribes → Outfit → system`. Until the file exists the browser
+skips it silently and headlines render in Outfit, the closest free geometric
+stand-in.
 
 ## Editing content
 
