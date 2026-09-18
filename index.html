@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SOORYA S JOSHI — Software / AI / Systems</title>
+<meta name="description" content="Portfolio of Soorya S Joshi — software development, AI/ML and electrical systems engineering. Bangalore, India." />
+<meta name="theme-color" content="#EFEBE2" />
+<link rel="preload" href="assets/fonts/Archivo-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="assets/fonts/JetBrainsMono-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="assets/css/fonts.css" />
+<link rel="stylesheet" href="assets/css/style.css" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23111'/%3E%3Ctext x='50' y='70' font-family='monospace' font-size='62' fill='%23EFEBE2' text-anchor='middle'%3E%3E%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+<div class="scan" aria-hidden="true"></div>
+<div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+<!-- ─────────────────────────────  HEADER  ───────────────────────────── -->
+<header class="topbar" id="top">
+  <div class="topbar__id">
+    <span class="dot" aria-hidden="true"></span>
+    <a href="#top" class="topbar__name">S_JOSHI</a>
+    <span class="topbar__meta">// PORTFOLIO_v1.0</span>
+  </div>
+  <nav class="topbar__nav" aria-label="Primary">
+    <a href="#about">ABOUT</a>
+    <a href="#experience">WORK</a>
+    <a href="#projects">PROJECTS</a>
+    <a href="#stack">STACK</a>
+    <a href="#research">RESEARCH</a>
+    <a href="#overview">OVERVIEW</a>
+  </nav>
+  <div class="topbar__sys">
+    <span class="sys-clock" id="clock">--:--:--</span>
+    <button class="btn-ghost" id="themeToggle" aria-pressed="false" title="Toggle theme (T)">
+      <span id="themeLabel">DARK</span>
+    </button>
+    <button class="btn-ghost menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileNav">MENU</button>
+  </div>
+</header>
+
+<nav class="mobilenav" id="mobileNav" aria-label="Mobile">
+  <a href="#about"><i>01</i> ABOUT</a>
+  <a href="#experience"><i>02</i> EXPERIENCE</a>
+  <a href="#projects"><i>03</i> PROJECTS</a>
+  <a href="#stack"><i>04</i> STACK</a>
+  <a href="#research"><i>05</i> RESEARCH</a>
+  <a href="#education"><i>06</i> EDUCATION</a>
+  <a href="#overview"><i>07</i> OVERVIEW</a>
+  <a href="#contact"><i>08</i> CONTACT</a>
+</nav>
+
+<main>
+
+<!-- ─────────────────────────────  HERO  ───────────────────────────── -->
+<section class="hero" id="hero">
+  <div class="wrap hero__grid">
+    <div class="hero__left">
+      <p class="eyebrow">// IDENTITY</p>
+      <h1 class="display display--xl" data-scramble>SOORYA<br />S JOSHI</h1>
+      <p class="hero__role">
+        <span class="tag">SOFTWARE DEVELOPMENT</span>
+        <span class="tag">AI / ML</span>
+        <span class="tag">DATA</span>
+        <span class="tag">ELECTRONICS</span>
+      </p>
+      <p class="lede">
+        Engineering undergraduate building software that ships — full-stack
+        platforms, deep-learning systems and embedded hardware. Currently
+        analysing process data at Cepheid (Danaher), Bangalore.
+      </p>
+      <div class="hero__cta">
+        <a class="btn" href="#projects">
+          <span>VIEW PROJECTS</span><span class="btn__arrow">↗</span>
+        </a>
+        <a class="btn btn--quiet" href="#contact">
+          <span>GET IN TOUCH</span><span class="btn__arrow">↗</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero__right">
+      <div class="panel term" id="term">
+        <div class="term__bar">
+          <span>SYS_CHANNEL: LOCAL/TTY0</span>
+          <span class="term__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        </div>
+        <pre class="term__body" id="termBody" aria-label="Terminal output"></pre>
+        <div class="term__foot">
+          <span>HASH: <b>SJ_01_A94</b></span>
+          <span class="sep" aria-hidden="true">|</span>
+          <span>STATUS: <b class="ok">OPEN_TO_WORK</b></span>
+        </div>
+      </div>
+      <dl class="statgrid">
+        <div><dt>CGPA</dt><dd>8.10<small>/10</small></dd></div>
+        <div><dt>PROJECTS</dt><dd>07</dd></div>
+        <div><dt>INTERNSHIPS</dt><dd>03</dd></div>
+        <div><dt>IEEE PAPERS</dt><dd>01</dd></div>
+      </dl>
+    </div>
+  </div>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track" id="tickerTrack"></div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────  ABOUT  ───────────────────────────── -->
+<section class="band" id="about">
+  <div class="wrap">
+    <p class="eyebrow">// ABOUT</p>
+    <h2 class="display display--lg" data-scramble>BUILT ON CIRCUITS.<br />WRITTEN IN CODE.</h2>
+    <div class="cols">
+      <div class="col">
+        <p>
+          I am an Electrical &amp; Electronics Engineering undergraduate at REVA
+          University, Bangalore, working across the line where hardware ends and
+          software begins. I write production-minded code in Java, C++, Python and
+          TypeScript, and I build the systems around it — APIs, data models,
+          interfaces and the analysis that proves they work.
+        </p>
+        <p>
+          My work spans a full-stack website-abandonment detection platform, a
+          PyTorch super-resolution model trained end-to-end without external APIs,
+          an ADHD-friendly learning platform, and embedded fault-detection hardware
+          built on Arduino. I co-authored an IEEE publication on the mathematical
+          modelling and kinematic analysis of a 20-DOF humanoid robot.
+        </p>
+      </div>
+      <div class="col col--meta">
+        <ul class="kv">
+          <li><span>NAME</span><b>Soorya S Joshi</b></li>
+          <li><span>BASE</span><b>Bangalore, India</b></li>
+          <li><span>DEGREE</span><b>B.Tech EEE · 2023–2027</b></li>
+          <li><span>FOCUS</span><b>Software · AI/ML · Data</b></li>
+          <li><span>ALSO</span><b>Embedded · Robotics · Power</b></li>
+          <li><span>STATUS</span><b class="ok">Available for roles</b></li>
+        </ul>
+        <p class="note">
+          <span class="prompt">$</span> two disciplines, one toolchain.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────  EXPERIENCE  ───────────────────────────── -->
+<section class="band band--alt" id="experience">
+  <div class="wrap">
+    <p class="eyebrow">// EXPERIENCE</p>
+    <h2 class="display display--lg" data-scramble>THE WORK LOG</h2>
+
+    <ol class="log">
+      <li class="log__row" data-reveal>
+        <div class="log__idx">EXP_01</div>
+        <div class="log__main">
+          <h3>Data Analyst Intern — Process Engineering</h3>
+          <p class="log__org">Cepheid — Danaher <span class="sep">·</span> Bangalore, India</p>
+          <ul class="bullets">
+            <li>Support the Process Engineering team through data analysis, reporting and process-focused analytics for engineering and manufacturing workflows.</li>
+            <li>Analyse process data to identify trends, organise operational information and communicate data-driven insight back to engineering.</li>
+          </ul>
+          <p class="chips"><span class="chip">DATA ANALYSIS</span><span class="chip">REPORTING</span><span class="chip">PROCESS ENGINEERING</span></p>
+        </div>
+        <div class="log__date">SEP 2026<br /><b class="ok">PRESENT</b></div>
+      </li>
+
+      <li class="log__row" data-reveal>
+        <div class="log__idx">EXP_02</div>
+        <div class="log__main">
+          <h3>Engineering Intern</h3>
+          <p class="log__org">Bharat Electronics Limited (BEL)</p>
+          <ul class="bullets">
+            <li>Designed and tested a 230V/12V transformer under supervised engineering procedure — assembly, insulation, testing and output validation.</li>
+            <li>Followed engineering documentation and formal test procedure during practical electrical equipment evaluation.</li>
+          </ul>
+          <p class="chips"><span class="chip">TRANSFORMER TESTING</span><span class="chip">INSULATION</span><span class="chip">SAFETY</span></p>
+        </div>
+        <div class="log__date">30 DAYS</div>
+      </li>
+
+      <li class="log__row" data-reveal>
+        <div class="log__idx">EXP_03</div>
+        <div class="log__main">
+          <h3>Industrial Trainee</h3>
+          <p class="log__org">Adani Dahanu Thermal Power Station</p>
+          <ul class="bullets">
+            <li>Studied electrical power generation, distribution, protection, control systems and plant electrical infrastructure.</li>
+            <li>Observed control-room operations and the monitoring of electrical and industrial processes at plant scale.</li>
+          </ul>
+          <p class="chips"><span class="chip">POWER SYSTEMS</span><span class="chip">CONTROL ROOM</span><span class="chip">PROTECTION</span></p>
+        </div>
+        <div class="log__date">1 WEEK</div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ─────────────────────────────  PROJECTS  ───────────────────────────── -->
+<section class="band" id="projects">
+  <div class="wrap">
+    <p class="eyebrow">// PROJECTS</p>
+    <h2 class="display display--lg" data-scramble>SELECTED BUILDS</h2>
+    <p class="section-sub">Use the selector — or <kbd>←</kbd> <kbd>→</kbd> — to page through the index.</p>
+
+    <div class="browser panel">
+      <div class="browser__head">
+        <span id="prjSlug">PRJ_01 / SITE_SCOUT</span>
+        <span class="browser__count"><b id="prjNum">01</b> / 07</span>
+      </div>
+      <div class="browser__body" id="prjBody"><!-- injected --></div>
+      <div class="browser__nav">
+        <button class="pager" data-step="-1" aria-label="Previous project">◄ PREV</button>
+        <div class="pager__list" id="pagerList" role="tablist" aria-label="Project selector"></div>
+        <button class="pager" data-step="1" aria-label="Next project">NEXT ►</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────  STACK  ───────────────────────────── -->
+<section class="band band--alt" id="stack">
+  <div class="wrap">
+    <p class="eyebrow">// STACK</p>
+    <h2 class="display display--lg" data-scramble>TOOLS ON THE BENCH</h2>
+    <div class="stack" id="stackGrid"><!-- injected --></div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────  RESEARCH  ───────────────────────────── -->
+<section class="band" id="research">
+  <div class="wrap">
+    <p class="eyebrow">// RESEARCH</p>
+    <h2 class="display display--lg" data-scramble>PUBLISHED WORK</h2>
+    <article class="paper panel">
+      <div class="paper__tag">IEEE · CO-AUTHOR</div>
+      <h3>20-DOF Humanoid Robot — Mathematical Modelling &amp; Kinematic Analysis</h3>
+      <p>
+        Co-authored an IEEE research publication on the mathematical modelling and
+        kinematic analysis of a 20 degree-of-freedom humanoid robot. Applied
+        mathematical and computational methods to model joint coordination,
+        analyse robot configuration and derive kinematic relationships across the
+        full articulated chain.
+      </p>
+      <p class="chips">
+        <span class="chip">KINEMATICS</span><span class="chip">MATHEMATICAL MODELLING</span>
+        <span class="chip">ROBOTICS</span><span class="chip">20-DOF</span>
+      </p>
+      <p class="paper__link"><a class="link-pending" href="#" data-pending>READ PUBLICATION <span>[LINK_PENDING]</span></a></p>
+    </article>
+  </div>
+</section>
+
+<!-- ─────────────────────────────  EDUCATION / CERTS  ───────────────────────────── -->
+<section class="band band--alt" id="education">
+  <div class="wrap">
+    <p class="eyebrow">// EDUCATION &amp; CERTIFICATION</p>
+    <h2 class="display display--lg" data-scramble>THE RECORD</h2>
+    <div class="cols cols--split">
+      <div class="col">
+        <h4 class="minihead">ACADEMIC</h4>
+        <ul class="edu">
+          <li>
+            <div><b>B.Tech, Electrical &amp; Electronics Engineering</b><span>REVA University, Bangalore</span></div>
+            <div class="edu__meta">2023–2027<br /><b>CGPA 8.10/10</b></div>
+          </li>
+          <li>
+            <div><b>Class XII — Pre-University</b><span>Mahesh PU College, Bangalore</span></div>
+            <div class="edu__meta">2023<br /><b>89%</b></div>
+          </li>
+          <li>
+            <div><b>Class X</b><span>Sarvodaya National Public School, Bangalore</span></div>
+            <div class="edu__meta">2021<br /><b>84%</b></div>
+          </li>
+        </ul>
+      </div>
+      <div class="col">
+        <h4 class="minihead">CERTIFICATIONS</h4>
+        <ul class="certs">
+          <li><span>CRT_01</span> NPTEL — C Programming</li>
+          <li><span>CRT_02</span> MathWorks — Multibody Simulation Onramp</li>
+          <li><span>CRT_03</span> MathWorks — Circuit Simulation Onramp</li>
+          <li><span>CRT_04</span> The Odin Project — Foundations</li>
+          <li><span>CRT_05</span> Basics of Java</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────  OVERVIEW  ───────────────────────────── -->
+<section class="band band--dark" id="overview">
+  <div class="wrap">
+    <p class="eyebrow">// OVERVIEW</p>
+    <h2 class="display display--lg" data-scramble>EVERYTHING,<br />AT A GLANCE.</h2>
+    <p class="section-sub">A single dump of the whole profile — the short version for people who skim.</p>
+
+    <div class="ov">
+      <div class="ov__metrics">
+        <div class="ov__metric ov__metric--sm"><b>2023—27</b><span>B.TECH EEE · REVA</span></div>
+        <div class="ov__metric"><b>8.10</b><span>CGPA / 10</span></div>
+        <div class="ov__metric"><b>07</b><span>SHIPPED PROJECTS</span></div>
+        <div class="ov__metric"><b>03</b><span>INTERNSHIPS</span></div>
+        <div class="ov__metric"><b>01</b><span>IEEE PUBLICATION</span></div>
+        <div class="ov__metric"><b>05</b><span>CERTIFICATIONS</span></div>
+      </div>
+
+      <div class="ov__table" role="table" aria-label="Profile overview index">
+        <div class="ov__row ov__row--head" role="row">
+          <span role="columnheader">ID</span>
+          <span role="columnheader">SECTION</span>
+          <span role="columnheader">SUMMARY</span>
+          <span role="columnheader">GO</span>
+        </div>
+        <div class="ov__row" role="row"><span>01</span><span>ABOUT</span><span>EEE undergrad writing software across hardware and web.</span><a href="#about">↗</a></div>
+        <div class="ov__row" role="row"><span>02</span><span>EXPERIENCE</span><span>Cepheid–Danaher · BEL · Adani Dahanu TPS.</span><a href="#experience">↗</a></div>
+        <div class="ov__row" role="row"><span>03</span><span>PROJECTS</span><span>Site Scout · NeuralEnhance · Goblin HQ · +4 more.</span><a href="#projects">↗</a></div>
+        <div class="ov__row" role="row"><span>04</span><span>STACK</span><span>Java · C++ · Python · TS · React · PyTorch · SQL.</span><a href="#stack">↗</a></div>
+        <div class="ov__row" role="row"><span>05</span><span>RESEARCH</span><span>IEEE — 20-DOF humanoid kinematic analysis.</span><a href="#research">↗</a></div>
+        <div class="ov__row" role="row"><span>06</span><span>EDUCATION</span><span>CGPA 8.10 · XII 89% · X 84% · 5 certs.</span><a href="#education">↗</a></div>
+        <div class="ov__row" role="row"><span>07</span><span>CONTACT</span><span>Bangalore · email · phone · links pending.</span><a href="#contact">↗</a></div>
+      </div>
+
+      <pre class="ov__json" aria-label="Profile summary as JSON"><code><span class="c">// cat profile.json</span>
+{
+  <span class="k">"name"</span>: <span class="s">"Soorya S Joshi"</span>,
+  <span class="k">"location"</span>: <span class="s">"Bangalore, IN"</span>,
+  <span class="k">"role"</span>: <span class="s">"Software / AI / Data"</span>,
+  <span class="k">"education"</span>: <span class="s">"B.Tech EEE, REVA University"</span>,
+  <span class="k">"languages"</span>: [<span class="s">"Java"</span>, <span class="s">"C++"</span>, <span class="s">"C"</span>, <span class="s">"Python"</span>, <span class="s">"JavaScript"</span>, <span class="s">"TypeScript"</span>, <span class="s">"SQL"</span>],
+  <span class="k">"domains"</span>: [<span class="s">"full-stack"</span>, <span class="s">"deep-learning"</span>, <span class="s">"embedded"</span>, <span class="s">"power-systems"</span>],
+  <span class="k">"publication"</span>: <span class="s">"IEEE — 20-DOF humanoid kinematics"</span>,
+  <span class="k">"status"</span>: <span class="s">"open_to_work"</span>
+}</code></pre>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────  CONTACT  ───────────────────────────── -->
+<section class="band" id="contact">
+  <div class="wrap">
+    <p class="eyebrow">// CONTACT</p>
+    <h2 class="display display--xl" data-scramble>LET'S BUILD<br />SOMETHING.</h2>
+    <div class="contact">
+      <ul class="contact__list">
+        <li><span>EMAIL</span><button class="copy" data-copy="sooryasjoshi@gmail.com">sooryasjoshi@gmail.com <i>COPY</i></button></li>
+        <li><span>PHONE</span><button class="copy" data-copy="+91 9686033052">+91 9686033052 <i>COPY</i></button></li>
+        <li><span>BASE</span><b>Bangalore, Karnataka, India</b></li>
+      </ul>
+      <ul class="contact__links">
+        <li><a class="link-pending" href="#" data-pending>GITHUB <span>[LINK_PENDING]</span></a></li>
+        <li><a class="link-pending" href="#" data-pending>LINKEDIN <span>[LINK_PENDING]</span></a></li>
+        <li><a class="link-pending" href="#" data-pending>RESUME.PDF <span>[LINK_PENDING]</span></a></li>
+        <li><a class="link-pending" href="#" data-pending>IEEE PAPER <span>[LINK_PENDING]</span></a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__inner">
+    <span>© <span id="year">2026</span> SOORYA S JOSHI</span>
+    <span class="foot__mid">BUILT WITH HTML · CSS · VANILLA JS — NO FRAMEWORK</span>
+    <a href="#top" class="foot__top">BACK TO TOP ▲</a>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
