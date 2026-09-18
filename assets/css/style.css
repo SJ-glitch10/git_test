@@ -153,7 +153,6 @@ html[data-theme="dark"] .scan{ mix-blend-mode:screen; opacity:.25;
   font-stretch:80%;
   line-height:.88;
   letter-spacing:-.018em;
-  word-spacing:-.06em;
   text-transform:uppercase;
 }
 .display--xl{ font-size:clamp(3.1rem, 9.4vw, 7.4rem); }

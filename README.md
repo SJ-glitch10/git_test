@@ -48,8 +48,25 @@ the inner `<span>[LINK_PENDING]</span>`.
 All copy lives in `index.html` except projects and the stack grid, which are
 data arrays at the top of `assets/js/main.js` (`PROJECTS`, `STACK`, `TICKER`).
 
-## Local preview
+## Viewing it
+
+The page loads its CSS, JS and fonts as separate files, so it needs a real
+directory — a server, or the folder opened as a folder. Opening `index.html`
+alone (emailed to yourself, or tapped from a phone's downloads) strips those
+paths and you get unstyled HTML.
 
 ```bash
 python3 -m http.server 8000   # then open http://localhost:8000
+```
+
+Or publish it: Settings -> Pages -> deploy from this branch, root folder.
+
+### Single-file build
+
+`portfolio-standalone.html` is the whole site — CSS, JS and both fonts inlined
+as data URIs, zero external requests. Open it from anywhere, including a phone.
+Regenerate it after any change to the source files:
+
+```bash
+python3 build.py
 ```
