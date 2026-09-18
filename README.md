@@ -1,5 +1,19 @@
 # SOORYA S JOSHI — Portfolio
 
+Two editions of the same portfolio, same facts, different worlds:
+
+| Edition | Where | What it is |
+| --- | --- | --- |
+| **Editor** | `index.html` | The page as a code editor — gutter, tabs, minimap, ⌘K |
+| **Newspaper** | `newspaper/index.html` | *The Joshi Herald* — a broadsheet, ads and all |
+
+Each links to the other in its header. Everything below describes the editor
+edition; the newspaper has its own section at the end.
+
+---
+
+## The editor edition
+
 A single-page portfolio that presents itself as a code editor: line-number
 gutter, file tabs, minimap, status bar and a `Ctrl/⌘ K` command palette, over a
 bone-paper / ink-hairline palette with one signal colour.
@@ -95,9 +109,10 @@ Or publish it: Settings -> Pages -> deploy from this branch, root folder.
 
 ### Single-file build
 
-`portfolio-standalone.html` is the whole site — CSS, JS and both fonts inlined
-as data URIs, zero external requests. Open it from anywhere, including a phone.
-Regenerate it after any change to the source files:
+`portfolio-standalone.html` and `newspaper/herald-standalone.html` are each the
+whole edition in one file — CSS, JS and fonts inlined as data URIs, zero
+external requests. Open either from anywhere, including a phone. Regenerate
+both after any change to the source files:
 
 ```bash
 python3 build.py

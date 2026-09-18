@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en" data-edition="day">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Joshi Herald — Soorya S Joshi</title>
+<meta name="description" content="The Joshi Herald — a broadsheet edition of the portfolio of Soorya S Joshi: software, AI/ML, electronics. Est. 2003." />
+<meta name="theme-color" content="#F2EDE0" />
+<link rel="preload" href="assets/fonts/CrimsonText-400.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="assets/fonts/PlayfairDisplay-400-900.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="assets/css/fonts.css" />
+<link rel="stylesheet" href="assets/css/paper.css" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23F2EDE0'/%3E%3Ctext x='50' y='76' font-family='Georgia,serif' font-size='74' font-weight='700' fill='%2316130F' text-anchor='middle'%3EJ%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+
+<!-- ══════════════════════════  BREAKING  ══════════════════════════ -->
+<div class="breaking" role="complementary" aria-label="Breaking news">
+  <span class="breaking__tag">BREAKING</span>
+  <div class="breaking__win"><div class="breaking__track" id="breakingTrack"></div></div>
+</div>
+
+<!-- ══════════════════════════  MASTHEAD  ══════════════════════════ -->
+<header class="masthead" id="top">
+  <div class="masthead__ears">
+    <span>EST. 2003</span>
+    <span class="masthead__ear-mid">“ALL THE COMMITS FIT TO PUSH”</span>
+    <span>FINAL EDITION</span>
+  </div>
+  <h1 class="masthead__title">The Joshi Herald</h1>
+  <div class="masthead__rule"><span></span><b>★ ★ ★</b><span></span></div>
+  <div class="dateline-bar">
+    <span>VOL. XXIII · No. 8.10</span>
+    <span id="todayLine">BANGALORE · FRIDAY, SEPTEMBER 18, 2026</span>
+    <span>PRICE: FREE TO GOOD EMPLOYERS</span>
+  </div>
+</header>
+
+<nav class="sections" aria-label="Sections">
+  <a href="#front">A · FRONT PAGE</a>
+  <a href="#careers">B · CAREERS</a>
+  <a href="#technology">C · TECHNOLOGY</a>
+  <a href="#science">D · SCIENCE</a>
+  <a href="#markets">E · MARKETS</a>
+  <a href="#funny">F · FUNNY PAGES</a>
+  <a href="#classifieds">G · CLASSIFIEDS</a>
+  <a class="sections__btn" href="../index.html" title="The editor edition">↩ EDITOR EDITION</a>
+  <button id="editionToggle" class="sections__btn">NIGHT EDITION</button>
+  <button id="printBtn" class="sections__btn">PRINT ⎙</button>
+</nav>
+
+<main>
+
+<!-- ══════════════════════════  FRONT PAGE  ══════════════════════════ -->
+<section class="page" id="front">
+  <div class="page__stamp">SECTION A · PAGE 1</div>
+
+  <div class="frontgrid">
+
+    <article class="lead">
+      <p class="kicker">TECHNOLOGY · PROFILE</p>
+      <h2 class="head head--lead">Local Engineer Caught<br />Building Software At All Hours</h2>
+      <p class="deck">
+        Electrical engineering undergraduate refuses to pick a side, ships
+        full-stack platforms and neural networks anyway — neighbours report
+        keyboard noise well past midnight
+      </p>
+      <p class="byline">By <b>OUR TECHNOLOGY CORRESPONDENT</b> · Photographs by the front-facing camera</p>
+      <div class="cols cols--3">
+        <p><span class="dropcap">B</span><span class="dateline">ANGALORE, SEPT 18 —</span>
+        Soorya S Joshi, an Electrical &amp; Electronics Engineering undergraduate at REVA
+        University, has been working steadily across a border most people respect:
+        the one between hardware and software.</p>
+        <p>Sources close to the matter — chiefly a GitHub contribution graph —
+        confirm production-minded code in Java, C++, Python and TypeScript, along
+        with the systems built around it: APIs, data models, interfaces and the
+        analysis that proves any of it works.</p>
+        <p>The body of work is unusually wide for a third-year student. It
+        includes a deployed platform that detects abandoned websites, a PyTorch
+        super-resolution model trained end to end without external APIs, a
+        learning platform designed for short attention spans, and embedded
+        fault-detection hardware built on Arduino.</p>
+        <p>Mr Joshi currently analyses process data for the Process Engineering
+        team at <b>Cepheid, a Danaher company</b>, in Bangalore. He has also
+        served internships at Bharat Electronics Limited and Adani Dahanu Thermal
+        Power Station, and co-authored an IEEE publication on the kinematic
+        analysis of a 20-degree-of-freedom humanoid robot.</p>
+        <p>Asked to explain the range, associates point to a simple through-line:
+        two disciplines, one toolchain. Neither the circuit nor the compiler is
+        treated as somebody else's department.</p>
+        <p class="jump">Continued on Page <a href="#technology">C1</a></p>
+      </div>
+    </article>
+
+    <aside class="rail">
+      <figure class="photo">
+        <div class="photo__plate" aria-hidden="true">
+          <svg viewBox="0 0 200 200" role="img" aria-label="Halftone portrait placeholder">
+            <defs>
+              <pattern id="halftone" width="6" height="6" patternUnits="userSpaceOnUse">
+                <circle cx="3" cy="3" r="2.1" fill="currentColor" />
+              </pattern>
+            </defs>
+            <rect width="200" height="200" fill="url(#halftone)" opacity=".22" />
+            <circle cx="100" cy="74" r="34" fill="url(#halftone)" opacity=".85" />
+            <path d="M40 200c0-36 27-60 60-60s60 24 60 60z" fill="url(#halftone)" opacity=".85" />
+          </svg>
+        </div>
+        <figcaption><b>FILE PHOTO:</b> The subject, mid-deploy. Photographer asked him to smile; he asked whether the build had passed.</figcaption>
+      </figure>
+
+      <div class="box">
+        <h3 class="box__head">WEATHER</h3>
+        <p class="weather"><b>BANGALORE</b> · 24°C</p>
+        <ul class="tight">
+          <li>Morning: light showers of pull requests</li>
+          <li>Afternoon: scattered merge conflicts, clearing by 4</li>
+          <li>Evening: heavy deployment, visibility poor in prod</li>
+          <li>Outlook: green build, 80% confidence</li>
+        </ul>
+      </div>
+
+      <div class="box box--rule">
+        <h3 class="box__head">INSIDE TODAY'S EDITION</h3>
+        <ol class="index">
+          <li><a href="#careers">Careers &amp; Appointments</a><span>B1</span></li>
+          <li><a href="#technology">Technology &amp; Builds</a><span>C1</span></li>
+          <li><a href="#science">Science &amp; Research</a><span>D1</span></li>
+          <li><a href="#science">Academic Record</a><span>D3</span></li>
+          <li><a href="#markets">Markets: The Stack</a><span>E1</span></li>
+          <li><a href="#funny">The Funny Pages</a><span>F1</span></li>
+          <li><a href="#glance">At A Glance</a><span>G1</span></li>
+          <li><a href="#classifieds">Classifieds &amp; Contact</a><span>G2</span></li>
+        </ol>
+      </div>
+
+      <blockquote class="pull">
+        “It compiles. Ship it, then find out why.”
+        <cite>— QUOTE OF THE DAY</cite>
+      </blockquote>
+    </aside>
+  </div>
+
+  <div class="ad ad--wide">
+    <span class="ad__tag">ADVERTISEMENT</span>
+    <p class="ad__head">TIRED OF THE DEAD WEB?</p>
+    <p class="ad__body"><b>SITE SCOUT</b> inspects DNS, HTTP, TLS and content metadata, then tells you — in a number from 0 to 100 — whether anyone still maintains that website. <i>Explanations included. No crystal ball.</i></p>
+    <a class="ad__cta" href="#" data-pending>SEE THE DEMO <span>[LINK PENDING]</span></a>
+  </div>
+</section>
+
+<!-- ══════════════════════════  CAREERS  ══════════════════════════ -->
+<section class="page" id="careers">
+  <div class="page__stamp">SECTION B · PAGE 1</div>
+  <h2 class="section-title">Careers &amp; Appointments</h2>
+
+  <div class="storygrid">
+    <article class="story">
+      <p class="kicker">APPOINTMENT · CURRENT</p>
+      <h3 class="head">Data Analyst Intern Joins Process Engineering At Cepheid</h3>
+      <p class="byline">CEPHEID — DANAHER · BANGALORE · SEPT 2026 – PRESENT</p>
+      <p>Supports the Process Engineering team through data analysis, reporting and
+      process-focused analytics for engineering and manufacturing workflows.</p>
+      <p>Analyses process data to identify trends, organises operational
+      information, and communicates data-driven insight back to engineering —
+      the unglamorous work on which manufacturing decisions actually rest.</p>
+      <p class="tagline">DATA ANALYSIS · REPORTING · PROCESS ENGINEERING</p>
+    </article>
+
+    <article class="story">
+      <p class="kicker">APPRENTICESHIP</p>
+      <h3 class="head">Transformer Built, Tested, And — Crucially — Not Exploded</h3>
+      <p class="byline">BHARAT ELECTRONICS LIMITED · 30 DAYS</p>
+      <p>Designed and tested a 230V/12V transformer under supervised engineering
+      procedure, covering assembly, insulation, testing and output validation.</p>
+      <p>Followed formal engineering documentation and test procedure throughout
+      the practical evaluation of electrical equipment. Safety practices observed;
+      eyebrows intact.</p>
+      <p class="tagline">TRANSFORMER TESTING · INSULATION · SAFETY</p>
+    </article>
+
+    <article class="story">
+      <p class="kicker">INDUSTRIAL TRAINING</p>
+      <h3 class="head">A Week Inside The Power Plant, Where The Logs Are Real Logs</h3>
+      <p class="byline">ADANI DAHANU THERMAL POWER STATION · 1 WEEK</p>
+      <p>Studied electrical power generation, distribution, protection, control
+      systems and plant electrical infrastructure at operating scale.</p>
+      <p>Observed control-room operations and the monitoring of electrical and
+      industrial processes — a reminder that somewhere behind every cloud region,
+      something is genuinely on fire, on purpose.</p>
+      <p class="tagline">POWER SYSTEMS · CONTROL ROOM · PROTECTION</p>
+    </article>
+  </div>
+
+  <div class="ad">
+    <span class="ad__tag">ADVERTISEMENT</span>
+    <p class="ad__head">ARDUINO &amp; SONS</p>
+    <p class="ad__body">PURVEYORS OF FINE MICROCONTROLLERS · RELAYS · SENSORS · JUMPER WIRES THAT MYSTERIOUSLY STOP WORKING. <b>Est. in a drawer, somewhere.</b></p>
+  </div>
+</section>
+
+<!-- ══════════════════════════  TECHNOLOGY  ══════════════════════════ -->
+<section class="page" id="technology">
+  <div class="page__stamp">SECTION C · PAGE 1</div>
+  <h2 class="section-title">Technology &amp; Builds</h2>
+
+  <article class="story story--hero">
+    <p class="kicker">INVESTIGATION</p>
+    <h3 class="head head--big">Abandoned Websites: The Silent Epidemic Nobody Is Scanning For</h3>
+    <p class="deck">One platform reads DNS, HTTP, TLS, server fingerprints and content
+    metadata, then scores the evidence — and shows its working</p>
+    <div class="cols cols--2">
+      <p><span class="dateline">SITE SCOUT —</span> A full-stack platform, built and
+      deployed, that analyses websites for the signs of abandonment or ongoing
+      maintenance.</p>
+      <p>Its explainable 0–100 abandonment score is assembled from stale
+      Last-Modified and copyright dates, outdated dependencies, legacy HTML,
+      placeholder content and missing security headers. No single signal
+      convicts; the report names every one it used.</p>
+      <p>Under the surface: asynchronous scanning, technology fingerprinting,
+      historical scan storage, trend analysis, and CSV/JSON reporting — shipped
+      with both a CLI and a web interface over the same engine.</p>
+      <p class="tagline">PYTHON · FASTAPI · REACT · SQLITE · REST</p>
+    </div>
+  </article>
+
+  <div class="storygrid storygrid--2">
+    <article class="story">
+      <p class="kicker">ARTIFICIAL INTELLIGENCE</p>
+      <h3 class="head">Man Teaches Computer To See Four Times Better, Locally</h3>
+      <p class="byline">NEURALENHANCE · PYTORCH</p>
+      <p>An end-to-end 4× super-resolution system that trains and infers entirely
+      on local hardware — no external AI APIs anywhere in the loop.</p>
+      <p>A residual convolutional architecture with PixelShuffle upsampling
+      reconstructs high-frequency detail; a combined pixel and Sobel-gradient loss
+      keeps edges sharp rather than smoothed. Quality measured in PSNR and SSIM,
+      with a Gradio interface for upload, before/after comparison and export.</p>
+      <p class="tagline">PYTORCH · COMPUTER VISION · GRADIO</p>
+    </article>
+
+    <article class="story">
+      <p class="kicker">EDUCATION TECHNOLOGY</p>
+      <h3 class="head">Learning Platform Built For The Easily Distracted — Squirrel!</h3>
+      <p class="byline">FULLSTACK GOBLIN HQ</p>
+      <p>Organises full-stack development into progressive phases,
+      prerequisite-gated quests, projects and milestones, on the theory that
+      attention is a resource to be budgeted rather than scolded.</p>
+      <p>Persistent progress tracking with XP, levels, achievements and randomised
+      missions; focus timers, keyboard shortcuts, distraction controls and
+      progress import/export.</p>
+      <p class="tagline">JAVASCRIPT · REACT · UX</p>
+    </article>
+
+    <article class="story">
+      <p class="kicker">COMMERCE</p>
+      <h3 class="head">Client Storefront Delivered, Client Reportedly Pleased</h3>
+      <p class="byline">E-COMMERCE WEBSITE · CLIENT PROJECT</p>
+      <p>A responsive storefront built for a real company to present its products
+      online, developed in direct conversation with the client.</p>
+      <p>Requirements translated into product browsing, structured product
+      information, responsive layouts, navigation and interactive frontend
+      behaviour.</p>
+      <p class="tagline">HTML5 · CSS3 · JAVASCRIPT</p>
+    </article>
+
+    <article class="story">
+      <p class="kicker">GAMES</p>
+      <h3 class="head">Playable Game Shipped; Bugs Renamed As Features Where Possible</h3>
+      <p class="byline">GODOT ENGINE</p>
+      <p>A complete playable game: mechanics, player interaction, scene management
+      and gameplay logic, written and iterated the hard way.</p>
+      <p>Systems programmed end to end, then broken, debugged and tuned until the
+      experience held together.</p>
+      <p class="tagline">GODOT · GDSCRIPT</p>
+    </article>
+
+    <article class="story">
+      <p class="kicker">INFRASTRUCTURE</p>
+      <h3 class="head">Faults Located Underground Without Digging Up The Road</h3>
+      <p class="byline">UNDERGROUND CABLE FAULT DETECTION</p>
+      <p>An Arduino-based system that detects and locates faults in buried cable
+      through voltage-drop analysis, with relay-based fault simulation to
+      reproduce conditions on the bench.</p>
+      <p>Electrical measurement, embedded programming and fault-detection logic
+      integrated into one automated identification loop.</p>
+      <p class="tagline">ARDUINO · RELAYS · ADC</p>
+    </article>
+
+    <article class="story">
+      <p class="kicker">ROBOTICS</p>
+      <h3 class="head">Robot Follows Line Obediently, Unlike Most Projects</h3>
+      <p class="byline">LINE FOLLOWING ROBOT</p>
+      <p>An autonomous robot navigating on infrared sensing, with real-time sensor
+      processing and motor control logic.</p>
+      <p>Sensors, microcontroller firmware, motor drivers and control logic
+      integrated into a single working embedded system — a closed control loop you
+      can watch move.</p>
+      <p class="tagline">ARDUINO · IR SENSORS · CONTROL</p>
+    </article>
+  </div>
+
+  <div class="ad ad--wide">
+    <span class="ad__tag">ADVERTISEMENT</span>
+    <p class="ad__head">NEURALENHANCE™ — NOW WITH 4× MORE PIXELS</p>
+    <p class="ad__body">Runs on your own machine. Sends nothing anywhere. Ask your local GPU. <i>Side effects may include noticing compression artefacts in everything, forever.</i></p>
+  </div>
+</section>
+
+<!-- ══════════════════════════  SCIENCE  ══════════════════════════ -->
+<section class="page" id="science">
+  <div class="page__stamp">SECTION D · PAGE 1</div>
+  <h2 class="section-title">Science &amp; Research</h2>
+
+  <div class="frontgrid frontgrid--flip">
+    <article class="lead">
+      <p class="kicker">PEER-REVIEWED · IEEE</p>
+      <h3 class="head head--big">Robot Walks In Twenty Different Ways; Paper Confirms Each One</h3>
+      <p class="deck">Mathematical modelling and kinematic analysis of a 20-DOF humanoid,
+      co-authored and published</p>
+      <p class="byline">IEEE PUBLICATION · CO-AUTHOR</p>
+      <div class="cols cols--2">
+        <p>The work applies mathematical and computational methods to model joint
+        coordination and analyse robot kinematics across a full articulated chain
+        of twenty degrees of freedom.</p>
+        <p>Each degree of freedom is one more way for a machine to be wrong, and
+        one more relationship to derive. The publication sets out the
+        configuration analysis and the kinematic relationships that connect them.</p>
+        <p class="tagline">KINEMATICS · MATHEMATICAL MODELLING · ROBOTICS</p>
+        <p><a class="pending-link" href="#" data-pending>READ THE PUBLICATION <span>[LINK PENDING]</span></a></p>
+      </div>
+    </article>
+
+    <aside class="rail">
+      <div class="box box--rule" id="record">
+        <h3 class="box__head">ACADEMIC RECORD</h3>
+        <table class="table">
+          <tbody>
+            <tr><td><b>B.Tech, Electrical &amp; Electronics Engineering</b><br /><i>REVA University, Bangalore</i></td><td class="num">2023–27<br /><b>8.10</b></td></tr>
+            <tr><td><b>Class XII (Pre-University)</b><br /><i>Mahesh PU College</i></td><td class="num">2023<br /><b>89%</b></td></tr>
+            <tr><td><b>Class X</b><br /><i>Sarvodaya National Public School</i></td><td class="num">2021<br /><b>84%</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box">
+        <h3 class="box__head">CREDENTIALS ON FILE</h3>
+        <ul class="tight tight--dash">
+          <li>NPTEL — C Programming</li>
+          <li>MathWorks — Multibody Simulation Onramp</li>
+          <li>MathWorks — Circuit Simulation Onramp</li>
+          <li>The Odin Project — Foundations</li>
+          <li>Basics of Java</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ══════════════════════════  MARKETS  ══════════════════════════ -->
+<section class="page" id="markets">
+  <div class="page__stamp">SECTION E · PAGE 1</div>
+  <h2 class="section-title">Markets: The Stack</h2>
+  <p class="standfirst">Closing positions as of this morning. Past performance is, in this
+  one case, a reasonable indicator of future results.</p>
+
+  <div class="markets" id="markets"><!-- injected --></div>
+
+  <div class="marketnote">
+    <p><b>COMMODITIES —</b> Coffee steady at four cups. Sleep down sharply on
+    deadline news. Rubber duck unchanged, continues to outperform as a debugging
+    instrument.</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════  FUNNY PAGES  ══════════════════════════ -->
+<section class="page" id="funny">
+  <div class="page__stamp">SECTION F · PAGE 1</div>
+  <h2 class="section-title">The Funny Pages</h2>
+
+  <div class="box box--joke">
+      <h3 class="box__head">TODAY'S JOKE</h3>
+      <p class="joke" id="jokeText">—</p>
+      <div class="joke__foot">
+        <button id="jokeBtn" class="btn-paper">TELL ME ANOTHER</button>
+        <span class="joke__count" id="jokeCount">No. 1</span>
+      </div>
+  </div>
+
+  <div class="funnycols">
+    <figure class="comic">
+      <figcaption class="comic__title">THE DAILY STANDUP <span>by S.J.</span></figcaption>
+      <div class="comic__strip">
+        <div class="panel">
+          <svg viewBox="0 0 120 100" aria-label="Panel one: a developer says the fix is easy">
+            <circle cx="34" cy="34" r="11" class="ink-s" /><path d="M34 46v24M24 54h20M27 88l7-18M41 88l-7-18" class="ink-s" />
+            <path d="M58 16h54v26H58z" class="ink-s" /><path d="M64 42l-4 10 12-10" class="ink-s" />
+            <text x="85" y="26" class="bubble">IT'S A</text><text x="85" y="36" class="bubble">ONE-LINE FIX</text>
+          </svg>
+        </div>
+        <div class="panel">
+          <svg viewBox="0 0 120 100" aria-label="Panel two: three days pass">
+            <path d="M10 20h100v60H10z" class="ink-s" />
+            <text x="60" y="46" class="bubble bubble--big">THREE DAYS</text>
+            <text x="60" y="64" class="bubble bubble--big">LATER</text>
+          </svg>
+        </div>
+        <div class="panel">
+          <svg viewBox="0 0 120 100" aria-label="Panel three: the diff is enormous">
+            <circle cx="34" cy="34" r="11" class="ink-s" /><path d="M34 46v24M24 68l10-12M44 68l-10-12M27 88l7-18M41 88l-7-18" class="ink-s" />
+            <path d="M58 10h54v34H58z" class="ink-s" /><path d="M64 44l-4 10 12-10" class="ink-s" />
+            <text x="85" y="22" class="bubble">+2,481</text><text x="85" y="32" class="bubble">−1,903</text><text x="85" y="42" class="bubble">47 FILES</text>
+          </svg>
+        </div>
+      </div>
+      <figcaption class="comic__caption">“The line was fine. Everything around it wasn't.”</figcaption>
+    </figure>
+
+    <div class="box">
+      <h3 class="box__head">DEVELOPER HOROSCOPE</h3>
+      <ul class="horo">
+        <li><b>ARIES</b> Your hotfix will work. Your hotfix will be the problem tomorrow.</li>
+        <li><b>TAURUS</b> Avoid force-push. Mercury is in retrograde and so is your branch.</li>
+        <li><b>GEMINI</b> Two environments, one config file. Choose wisely.</li>
+        <li><b>CANCER</b> A senior engineer will say “interesting” about your PR. Hold.</li>
+        <li><b>LEO</b> The demo works. Do not touch anything until Thursday.</li>
+        <li><b>VIRGO</b> Someone will finally read your README. Be ready.</li>
+        <li><b>LIBRA</b> Balance is a myth; the load balancer agrees.</li>
+        <li><b>SCORPIO</b> The bug is in your code. It was always in your code.</li>
+        <li><b>SAGITTARIUS</b> Travel is indicated — through a stack trace, downward.</li>
+        <li><b>CAPRICORN</b> Your estimate was honest. Multiply it by three anyway.</li>
+        <li><b>AQUARIUS</b> The cache remembers what you would rather forget.</li>
+        <li><b>PISCES</b> Deploy on Friday if you must. We will speak at the retro.</li>
+      </ul>
+    </div>
+
+    <div class="box box--rule">
+      <h3 class="box__head">THE HERALD MINI CROSSWORD</h3>
+      <div class="xword">
+        <table class="xgrid" id="xgrid" aria-label="Mini crossword grid"></table>
+        <div class="xclues">
+          <p class="xclues__head">ACROSS &amp; DOWN <i>(identical — the setter had a deadline)</i></p>
+          <ol>
+            <li>What you lose during a production outage</li>
+            <li>All that remains of the server after the deploy</li>
+            <li>What the keyboard suffers at 3 a.m.</li>
+            <li>What a 3D printer runs on, and what stubbornness is made of</li>
+            <li>What the dashboard finally started showing</li>
+          </ol>
+          <button id="xBtn" class="btn-paper">REVEAL ANSWERS</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="box box--obit">
+      <h3 class="box__head">OBITUARIES</h3>
+      <p><b>VAR</b>, of JavaScript, passed peacefully in 2015 after a long illness
+      involving scope. Survived by <i>let</i> and <i>const</i>. Function-scoped to
+      the very end. In lieu of flowers, the family asks that you enable strict mode.</p>
+      <p><b>THE 3 A.M. BUG</b>, aged eleven hours, went quietly on Tuesday when
+      someone finally read the error message. It is survived by four of its
+      children, currently in staging.</p>
+    </div>
+
+    <div class="box">
+      <h3 class="box__head">WORD OF THE DAY</h3>
+      <p class="wotd"><b>heisenbug</b> <i>(noun)</i></p>
+      <p>A defect that alters its behaviour the moment you attempt to observe it.
+      Vanishes under the debugger; returns the instant you tell your manager it is
+      fixed. <i>See also:</i> works on my machine.</p>
+      <p class="wotd__use"><b>Used in a sentence:</b> “It is not a heisenbug, it is a
+      race condition, and it is mine.”</p>
+    </div>
+
+  </div>
+
+  <div class="ad">
+    <span class="ad__tag">ADVERTISEMENT</span>
+    <p class="ad__head">FULLSTACK GOBLIN HQ</p>
+    <p class="ad__body">LEARNING, BUT IN SMALL PIECES. XP · QUESTS · FOCUS TIMERS · ACHIEVEMENTS. <b>For the easily distrac—</b></p>
+  </div>
+</section>
+
+<!-- ══════════════════════════  AT A GLANCE  ══════════════════════════ -->
+<section class="page page--dark" id="glance">
+  <div class="page__stamp">SECTION G · PAGE 1</div>
+  <h2 class="section-title section-title--light">At A Glance</h2>
+  <p class="standfirst standfirst--light">The entire edition, condensed for readers with a train to catch.</p>
+
+  <div class="glance">
+    <div class="glance__figures">
+      <div><b>2023–27</b><span>B.TECH EEE · REVA</span></div>
+      <div><b>8.10</b><span>CGPA / 10</span></div>
+      <div><b>07</b><span>PROJECTS SHIPPED</span></div>
+      <div><b>03</b><span>INTERNSHIPS</span></div>
+      <div><b>01</b><span>IEEE PUBLICATION</span></div>
+      <div><b>05</b><span>CERTIFICATIONS</span></div>
+    </div>
+
+    <table class="glance__table">
+      <thead><tr><th>PG</th><th>SECTION</th><th>THE SHORT VERSION</th></tr></thead>
+      <tbody>
+        <tr><td>A1</td><td>Front Page</td><td>EEE undergraduate writing software across hardware and web.</td></tr>
+        <tr><td>B1</td><td>Careers</td><td>Cepheid–Danaher (current) · Bharat Electronics · Adani Dahanu TPS.</td></tr>
+        <tr><td>C1</td><td>Technology</td><td>Site Scout · NeuralEnhance · Goblin HQ · client storefront · a game · two embedded builds.</td></tr>
+        <tr><td>D1</td><td>Science</td><td>IEEE paper — 20-DOF humanoid kinematic analysis.</td></tr>
+        <tr><td>D3</td><td>Academic</td><td>CGPA 8.10 · Class XII 89% · Class X 84% · five certifications.</td></tr>
+        <tr><td>E1</td><td>Markets</td><td>Java · C++ · Python · TypeScript · React · PyTorch · SQL · Arduino.</td></tr>
+        <tr><td>F1</td><td>Funny Pages</td><td>Jokes, a comic, a horoscope, a crossword and two obituaries.</td></tr>
+        <tr><td>G2</td><td>Classifieds</td><td>Bangalore · email · phone · links pending.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ══════════════════════════  CLASSIFIEDS  ══════════════════════════ -->
+<section class="page" id="classifieds">
+  <div class="page__stamp">SECTION G · PAGE 2</div>
+  <h2 class="section-title">Classifieds</h2>
+
+  <div class="classifieds">
+    <div class="classified classified--lead">
+      <h3 class="classified__head">SITUATIONS WANTED</h3>
+      <p><b>SOFTWARE / AI / DATA.</b> Engineering undergraduate, Bangalore, seeks
+      internships and graduate roles where the hardware and the software are
+      allowed to speak to one another. Java, C++, Python, TypeScript, PyTorch,
+      SQL, Arduino. Ships, documents, and answers the phone.</p>
+      <p class="classified__meta">Available now · Bangalore or remote · Replies within one business day</p>
+    </div>
+
+    <div class="classified">
+      <h3 class="classified__head">TO REACH THE DESK</h3>
+      <ul class="tight tight--dash">
+        <li><b>EMAIL</b> <button class="copy" data-copy="sooryasjoshi@gmail.com">sooryasjoshi@gmail.com <i>COPY</i></button></li>
+        <li><b>TELEPHONE</b> <button class="copy" data-copy="+91 9686033052">+91 9686033052 <i>COPY</i></button></li>
+        <li><b>BUREAU</b> Bangalore, Karnataka, India</li>
+      </ul>
+    </div>
+
+    <div class="classified">
+      <h3 class="classified__head">NOTICES</h3>
+      <ul class="tight tight--dash">
+        <li><a class="pending-link" href="#" data-pending>GITHUB <span>[LINK PENDING]</span></a></li>
+        <li><a class="pending-link" href="#" data-pending>LINKEDIN <span>[LINK PENDING]</span></a></li>
+        <li><a class="pending-link" href="#" data-pending>RÉSUMÉ, PRINTABLE <span>[LINK PENDING]</span></a></li>
+        <li><a class="pending-link" href="#" data-pending>THE IEEE PAPER <span>[LINK PENDING]</span></a></li>
+      </ul>
+    </div>
+
+    <div class="classified classified__ad">
+      <h3 class="classified__head">THIS SPACE FOR HIRE</h3>
+      <p>Reasonable rates. Enquire within. Preference given to advertisers whose
+      CI is green.</p>
+    </div>
+
+    <div class="classified">
+      <h3 class="classified__head">LOST &amp; FOUND</h3>
+      <p><b>LOST:</b> one semicolon, last seen near line 412. Sentimental value.</p>
+      <p><b>FOUND:</b> eleven unused npm packages, good condition, no known owner.</p>
+    </div>
+
+    <div class="classified">
+      <h3 class="classified__head">LETTERS TO THE EDITOR</h3>
+      <p><i>Sir</i> — Your correspondent claims the code is “self-documenting”. I
+      have read it. It is not. <br /><b>— A REVIEWER, PULL REQUEST #42</b></p>
+      <p><i>Sir</i> — It worked on my machine.<br /><b>— NAME WITHHELD</b></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="colophon">
+  <div class="colophon__rule"></div>
+  <p><b>THE JOSHI HERALD</b> · Published daily from Bangalore · Set in Playfair Display, Crimson Text and Oswald</p>
+  <p>© <span id="year">2026</span> Soorya S Joshi. All views are the subject's own, particularly about tabs versus spaces.</p>
+  <p class="colophon__nav"><a href="#top">RETURN TO PAGE ONE ▲</a></p>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="assets/js/paper.js"></script>
+</body>
+</html>
