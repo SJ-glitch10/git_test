@@ -48,6 +48,18 @@ the inner `<span>[LINK_PENDING]</span>`.
 All copy lives in `index.html` except projects and the stack grid, which are
 data arrays at the top of `assets/js/main.js` (`PROJECTS`, `STACK`, `TICKER`).
 
+## Agent harness
+
+`.claude/agents/` defines a `general-manager` agent that routes work and gates
+it, and a `debugging-agent` that diagnoses and fixes. Both run
+`scripts/verify.sh`, and every changed function is checked individually before
+anything is handed to the agent that opens the pull request. See
+`.claude/AGENTS.md`.
+
+```bash
+bash scripts/verify.sh
+```
+
 ## Local preview
 
 ```bash
